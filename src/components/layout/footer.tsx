@@ -1,87 +1,59 @@
-import Link from "next/link";
-import Image from "next/image";
-import { Facebook, Twitter, Instagram, Mail, Phone, MapPin } from "lucide-react";
-import { siteContent } from "@/lib/content";
+import { Link } from 'react-router-dom';
+import { Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
 
 export function Footer() {
-    const { footer, assets } = siteContent;
-
     return (
-        <footer className="bg-[#0B655E] text-white pt-16 pb-8 border-t border-white/10">
-            <div className="container mx-auto px-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-                    {/* Column 1: About */}
-                    <div className="space-y-4">
-                        <div className="flex items-center gap-3 mb-4">
-                            <div className="relative h-12 w-12">
-                                <Image
-                                    src={assets.footerLogo}
-                                    alt={footer.about.title}
-                                    fill
-                                    className="object-contain"
-                                />
-                            </div>
-                            <h3 className="text-xl font-bold">{footer.about.title}</h3>
+        <footer className="bg-primary text-white mt-auto">
+            <div className="container mx-auto px-4 py-12">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {/* Quick Links */}
+                    <div>
+                        <h3 className="text-xl font-bold mb-4">روابط سريعة</h3>
+                        <ul className="space-y-2">
+                            <li><Link to="/about" className="hover:text-secondary transition-colors">من نحن</Link></li>
+                            <li><Link to="/news" className="hover:text-secondary transition-colors">الأخبار</Link></li>
+                            <li><Link to="/events" className="hover:text-secondary transition-colors">الأجندة</Link></li>
+                            <li><Link to="/poets" className="hover:text-secondary transition-colors">الشعراء</Link></li>
+                        </ul>
+                    </div>
+
+                    {/* House Info */}
+                    <div>
+                        <h3 className="text-xl font-bold mb-4">معلومات البيت</h3>
+                        <ul className="space-y-2">
+                            <li><Link to="/archive" className="hover:text-secondary transition-colors">الأرشيف</Link></li>
+                            <li><Link to="/publications" className="hover:text-secondary transition-colors">الإصدارات</Link></li>
+                            <li><Link to="/reports" className="hover:text-secondary transition-colors">التقارير</Link></li>
+                            <li><Link to="/contact" className="hover:text-secondary transition-colors">اتصل بنا</Link></li>
+                        </ul>
+                    </div>
+
+                    {/* Social Media */}
+                    <div>
+                        <h3 className="text-xl font-bold mb-4">تابعنا</h3>
+                        <div className="flex gap-4">
+                            <a href="#" className="hover:text-secondary transition-colors">
+                                <Facebook size={24} />
+                            </a>
+                            <a href="#" className="hover:text-secondary transition-colors">
+                                <Twitter size={24} />
+                            </a>
+                            <a href="#" className="hover:text-secondary transition-colors">
+                                <Instagram size={24} />
+                            </a>
+                            <a href="#" className="hover:text-secondary transition-colors">
+                                <Youtube size={24} />
+                            </a>
                         </div>
-                        <p className="text-white/80 leading-relaxed text-sm">
-                            {footer.about.text}
-                        </p>
-                    </div>
-
-                    {/* Column 2: Quick Links */}
-                    <div>
-                        <h4 className="text-[#EDB91D] font-bold text-lg mb-6">{footer.quickLinks.title}</h4>
-                        <ul className="space-y-3">
-                            {footer.quickLinks.links.map((link, idx) => (
-                                <li key={idx}><Link href={link.href} className="hover:text-[#EDB91D] transition-colors">{link.label}</Link></li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Column 3: Resources */}
-                    <div>
-                        <h4 className="text-[#EDB91D] font-bold text-lg mb-6">{footer.resources.title}</h4>
-                        <ul className="space-y-3">
-                            {footer.resources.links.map((link, idx) => (
-                                <li key={idx}><Link href={link.href} className="hover:text-[#EDB91D] transition-colors">{link.label}</Link></li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Column 4: Contact */}
-                    <div>
-                        <h4 className="text-[#EDB91D] font-bold text-lg mb-6">{footer.contact.title}</h4>
-                        <ul className="space-y-4">
-                            <li className="flex items-start gap-3">
-                                <MapPin className="text-[#EDB91D] shrink-0" size={20} />
-                                <span className="text-sm">{footer.contact.address}</span>
-                            </li>
-                            <li className="flex items-center gap-3">
-                                <Phone className="text-[#EDB91D] shrink-0" size={20} />
-                                <span className="text-sm">{footer.contact.phone}</span>
-                            </li>
-                            <li className="flex items-center gap-3">
-                                <Mail className="text-[#EDB91D] shrink-0" size={20} />
-                                <span className="text-sm">{footer.contact.email}</span>
-                            </li>
-                        </ul>
-
-                        <div className="flex gap-4 mt-6">
-                            <Link href="#" className="bg-white/10 p-2 rounded-full hover:bg-[#EDB91D] hover:text-[#0B655E] transition-all">
-                                <Facebook size={18} />
-                            </Link>
-                            <Link href="#" className="bg-white/10 p-2 rounded-full hover:bg-[#EDB91D] hover:text-[#0B655E] transition-all">
-                                <Twitter size={18} />
-                            </Link>
-                            <Link href="#" className="bg-white/10 p-2 rounded-full hover:bg-[#EDB91D] hover:text-[#0B655E] transition-all">
-                                <Instagram size={18} />
-                            </Link>
+                        <div className="mt-4">
+                            <p className="text-sm">بالشراكة مع</p>
+                            <a href="#" className="text-secondary hover:underline">ESKI</a>
                         </div>
                     </div>
                 </div>
 
-                <div className="border-t border-white/10 pt-8 text-center text-sm text-white/50">
-                    <p>{footer.copyright}</p>
+                <div className="border-t border-white/20 mt-8 pt-8 text-center">
+                    <p className="text-sm">© 2024 بيت الشعر - نواكشوط. جميع الحقوق محفوظة.</p>
                 </div>
             </div>
         </footer>

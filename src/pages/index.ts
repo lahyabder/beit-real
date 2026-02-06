@@ -1,0 +1,11 @@
+export { Home } from './Home';
+export { Reports } from './Reports';
+export { News } from './News';
+export { NewsDetail } from './NewsDetail';
+export { Events } from './Events';
+export { EventDetail } from './EventDetail';
+export { Poets } from './Poets';
+export { Archive } from './Archive';
+export { Publications } from './Publications';
+export { About } from './About';
+export { Contact } from './Contact';
