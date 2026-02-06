@@ -18,12 +18,12 @@ export function Header() {
     ];
 
     return (
-        <header className="bg-white shadow-sm sticky top-0 z-50">
+        <header className="bg-gradient-to-r from-primary to-primary-700 shadow-lg sticky top-0 z-50">
             <div className="container mx-auto px-4">
                 <div className="flex items-center justify-between h-20">
                     <Link to="/" className="flex items-center gap-3">
-                        <div className="text-2xl font-bold text-primary">
-                            بيت الشعر - نواكشوط
+                        <div className="text-2xl font-bold text-white">
+                            بيت الشعر - <span className="text-secondary">نواكشوط</span>
                         </div>
                     </Link>
 
@@ -33,7 +33,7 @@ export function Header() {
                             <Link
                                 key={item.path}
                                 to={item.path}
-                                className="text-gray-700 hover:text-primary transition-colors font-medium"
+                                className="text-white/90 hover:text-secondary hover:bg-secondary/10 px-3 py-2 rounded-lg transition-all font-medium"
                             >
                                 {item.label}
                             </Link>
@@ -43,7 +43,7 @@ export function Header() {
                     {/* Mobile Menu Button */}
                     <button
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className="lg:hidden p-2"
+                        className="lg:hidden p-2 text-white"
                     >
                         {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
@@ -51,12 +51,12 @@ export function Header() {
 
                 {/* Mobile Navigation */}
                 {isMenuOpen && (
-                    <nav className="lg:hidden py-4 border-t">
+                    <nav className="lg:hidden py-4 border-t border-white/20">
                         {navItems.map((item) => (
                             <Link
                                 key={item.path}
                                 to={item.path}
-                                className="block py-2 text-gray-700 hover:text-primary transition-colors"
+                                className="block py-2 text-white/90 hover:text-secondary transition-colors"
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 {item.label}

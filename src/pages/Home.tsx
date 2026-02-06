@@ -1,14 +1,14 @@
 export function Home() {
     return (
-        <div className="min-h-screen">
+        <div className="min-h-screen bg-light-bg">
             {/* Hero Section */}
-            <div className="relative bg-gradient-to-br from-primary via-primary-700 to-primary-900 text-white py-24 md:py-32 overflow-hidden">
-                <div className="absolute inset-0 opacity-10">
+            <div className="relative bg-dark text-white py-24 md:py-32 overflow-hidden min-h-screen flex items-center">
+                <div className="absolute inset-0 opacity-5">
                     <div className="absolute inset-0 bg-[url('/hero-pattern.svg')] bg-repeat"></div>
                 </div>
                 <div className="container mx-auto px-4 text-center relative z-10">
                     <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
-                        بيت الشعر نواكشوط
+                        بيت الشعر <span className="text-secondary">نواكشوط</span>
                     </h1>
                     <p className="text-xl md:text-2xl mb-4 max-w-4xl mx-auto leading-relaxed">
                         مؤسسة ثقافية وطنية
@@ -19,13 +19,13 @@ export function Home() {
                     <div className="flex gap-4 justify-center flex-wrap">
                         <a
                             href="/events"
-                            className="bg-secondary hover:bg-secondary-600 text-white px-8 py-3 rounded-lg font-bold transition-colors shadow-lg"
+                            className="bg-secondary hover:bg-secondary-600 text-dark px-8 py-3 rounded-lg font-bold transition-colors shadow-lg"
                         >
                             الفعاليات القادمة
                         </a>
                         <a
                             href="/poets"
-                            className="bg-white hover:bg-gray-100 text-primary px-8 py-3 rounded-lg font-bold transition-colors shadow-lg"
+                            className="bg-white/10 hover:bg-white/20 border-2 border-white/30 text-white px-8 py-3 rounded-lg font-bold transition-colors shadow-lg backdrop-blur-sm"
                         >
                             استكشف الشعراء
                         </a>
@@ -34,23 +34,25 @@ export function Home() {
             </div>
 
             {/* Stats Section */}
-            <div className="container mx-auto px-4 py-16">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                    <div className="text-center bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                        <div className="text-5xl font-bold text-primary mb-2">+120</div>
-                        <div className="text-gray-600 text-lg">الشعراء</div>
-                    </div>
-                    <div className="text-center bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                        <div className="text-5xl font-bold text-primary mb-2">25</div>
-                        <div className="text-gray-600 text-lg">الأجندة</div>
-                    </div>
-                    <div className="text-center bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                        <div className="text-5xl font-bold text-primary mb-2">+500</div>
-                        <div className="text-gray-600 text-lg">الأرشيف</div>
-                    </div>
-                    <div className="text-center bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                        <div className="text-5xl font-bold text-primary mb-2">45</div>
-                        <div className="text-gray-600 text-lg">الإصدارات</div>
+            <div className="bg-dark py-16 -mt-1">
+                <div className="container mx-auto px-4">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <div className="text-center bg-white/5 backdrop-blur-sm border border-secondary/10 p-8 rounded-lg hover:bg-white/10 transition-all">
+                            <div className="text-5xl font-bold text-secondary mb-2">+120</div>
+                            <div className="text-white/80 text-lg">الشعراء</div>
+                        </div>
+                        <div className="text-center bg-white/5 backdrop-blur-sm border border-secondary/10 p-8 rounded-lg hover:bg-white/10 transition-all">
+                            <div className="text-5xl font-bold text-secondary mb-2">25</div>
+                            <div className="text-white/80 text-lg">الأجندة</div>
+                        </div>
+                        <div className="text-center bg-white/5 backdrop-blur-sm border border-secondary/10 p-8 rounded-lg hover:bg-white/10 transition-all">
+                            <div className="text-5xl font-bold text-secondary mb-2">+500</div>
+                            <div className="text-white/80 text-lg">الأرشيف</div>
+                        </div>
+                        <div className="text-center bg-white/5 backdrop-blur-sm border border-secondary/10 p-8 rounded-lg hover:bg-white/10 transition-all">
+                            <div className="text-5xl font-bold text-secondary mb-2">45</div>
+                            <div className="text-white/80 text-lg">الإصدارات</div>
+                        </div>
                     </div>
                 </div>
             </div>
