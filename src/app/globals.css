@@ -1,26 +1,68 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --font-sans: var(--font-changa);
 
-@theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --background: #F8F7F1;
+  --foreground: #1A334D;
+
+  --primary: #0B655E;
+  --primary-foreground: #FFFFFF;
+
+  --secondary: #EDB91D;
+  --secondary-foreground: #0B655E;
+
+  --accent: #EDB91D;
+  --accent-foreground: #0B655E;
+
+  --muted: #1A334D;
+  --muted-foreground: rgba(26, 51, 77, 0.7);
+
+  --card: #FFFFFF;
+  --card-foreground: #1A334D;
+
+  --border: rgba(26, 51, 77, 0.2);
+  --input: rgba(26, 51, 77, 0.2);
+  --ring: #0B655E;
+
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Changa", ui-sans-serif, system-ui, sans-serif;
+  }
 }
